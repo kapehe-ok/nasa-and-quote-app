@@ -1,21 +1,21 @@
 import React from "react";
-import './App.css';
-import { HashRouter, Route } from 'react-router-dom';
-import NavBar from './component/NavBar';
-import Quote from './component/Quote';
-import NasaPhoto from './component/NasaPhoto';
+import { BrowserRouter, Route } from "react-router-dom";
+import NavBar from "./component/NavBar";
+import Quote from "./component/Quote";
+import NasaPhoto from "./component/NasaPhoto";
+import "./App.css";
 
 export default function App() {
-
   return (
-    <HashRouter>
-      <div>
+    <BrowserRouter>
+      <div className="app">
         <NavBar />
-        <Route component={ NasaPhoto } path='/' exact />
-        <Route component={ Quote } path='/quote' />
+
+        <div className="content">
+          <Route component={NasaPhoto} path="/" exact />
+          <Route component={Quote} path="/quote" />
+        </div>
       </div>
-    </HashRouter>
-  )
+    </BrowserRouter>
+  );
 }
-
-

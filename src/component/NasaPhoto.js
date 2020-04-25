@@ -1,29 +1,33 @@
 import React, { useState, useEffect } from "react";
-import { Image } from 'react-bootstrap';
-import '../App.css';
+
+const apiKey = process.env.REACT_APP_NASA_KEY;
 
 export default function NasaPhoto() {
-  
-  const [ nasaData, setData ] = useState({ });
-
-  async function fetchPhoto() {
-    const apiKey = process.env.REACT_APP_NASA_KEY;
-    const res = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}`)
-    const data = await res.json()
-    setData(data)
-    console.log(data, "lalalala")
-  }
+  const [photoData, setPhotoData] = useState(null);
 
   useEffect(() => {
-    fetchPhoto()
+    fetchPhoto();
+
+    async function fetchPhoto() {
+      const res = await fetch(
+        `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`
+      );
+      const data = await res.json();
+      setPhotoData(data);
+    }
   }, []);
 
+  if (!photoData) return <div />;
+
   return (
-    <div className="NasaPhoto">
-      <h1 className="title">{nasaData.title}</h1>
-      <Image className="photo" src={nasaData.url} />
-      <p className="explanation">{nasaData.explanation}</p>
-      <p className="date">{nasaData.date}</p>
+    <div className="nasa-photo">
+      <img className="photo" src={photoData.url} alt={photoData.title} />
+
+      <div>
+        <h1>{photoData.title}</h1>
+        <p className="date">{photoData.date}</p>
+        <p className="explanation">{photoData.explanation}</p>
+      </div>
     </div>
-  )
+  );
 }

@@ -1,77 +1,116 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap");
 
 body {
   background-color: black;
+  font-family: "Raleway", sans-serif;
+  color: #d14f4f;
+  line-height: 1.7;
+  font-size: 19px;
 }
 
-.App {
+.content {
+  max-width: 80%;
+  margin: 50px auto;
+}
+
+/* navbar ---------- */
+
+.navbar {
+  background-color: rgba(22, 22, 22, 0.8);
   display: flex;
-  flex-wrap: wrap;
-}
-
-.NasaPhoto {
-  font-family: 'Raleway', sans-serif;
-  width: 40%;
-  height: 80vh;
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: 50px;
-  margin-top: 2%;
-  border-radius: 20px;
-  padding: 30px;
-}
-
-.Quote {
-  width: 40%;
-  height: 50vh;
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: 60px;
-  margin-top: 8%;
-  border-radius: 20px;
-  padding: 30px;
-}
-
-.title {
-  text-align: center;
-  color: tomato;
-}
-
-.photo {
-  height: 200px;
-  display: inline;
-  float: left;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.explanation {
-  color: tomato;
-}
-
-.date {
-  color: tomato;
-}
-
-.author {
-  color: tomato;
-  align-content: center;
-}
-
-.quotetext {
-  display: inline;
-  float: right;
-  color: tomato;
-  font-weight: bold;
-  font-size: 30px;
+  justify-content: center;
 }
 
 .link {
-  display: inline;
-  float: right;
-  color: tomato;
+  color: #efefef;
+  display: inline-block;
+  padding: 3px 20px;
+  font-size: 16px;
+  text-decoration: none;
+  transition: 0.3s ease color;
 }
 
-.navbar {
-  background-color: white;
+.link:hover,
+.link.active {
+  color: #d14f4f;
+}
+
+/* nasa photo ---------- */
+
+.nasa-photo {
+  display: flex;
+}
+
+.nasa-photo img {
+  width: 50%;
+  margin-right: 50px;
+  object-fit: contain;
+}
+
+.nasa-photo h1 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.nasa-photo .date {
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.nasa-photo .explanation {
+  color: #bbb;
+}
+
+@media (max-width: 1280px) {
+  .nasa-photo {
+    display: block;
+  }
+
+  .nasa-photo img {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+}
+
+/* quote ---------- */
+
+.quote {
+  line-height: 1.3;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.quote-text {
+  font-size: 50px;
+  text-align: center;
+  position: relative;
+}
+
+.quote-text::before {
+  content: '"';
+  display: block;
+  font-size: 555px;
+  pointer-events: none;
+  position: absolute;
+  top: -55%;
+  left: 0;
+  opacity: 0.1;
+  color: #aaa;
+  line-height: 1;
+  font-family: cursive;
+}
+
+.author {
+  margin-left: auto;
+  margin-right: 10%;
+}
+
+.author a {
+  text-decoration: none;
+  color: #999;
+  font-size: 30px;
 }
