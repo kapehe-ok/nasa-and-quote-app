@@ -1,38 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+
+body {
+  background-color: black;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
 }
 
-.App-link {
-  color: #61dafb;
+.NasaPhoto {
+  font-family: 'Raleway', sans-serif;
+  width: 40%;
+  height: 80vh;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 50px;
+  margin-top: 2%;
+  border-radius: 20px;
+  padding: 30px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Quote {
+  width: 40%;
+  height: 50vh;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 60px;
+  margin-top: 8%;
+  border-radius: 20px;
+  padding: 30px;
+}
+
+.title {
+  text-align: center;
+  color: tomato;
+}
+
+.photo {
+  height: 200px;
+  display: inline;
+  float: left;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.explanation {
+  color: tomato;
+}
+
+.date {
+  color: tomato;
+}
+
+.author {
+  color: tomato;
+  align-content: center;
+}
+
+.quotetext {
+  display: inline;
+  float: right;
+  color: tomato;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.link {
+  display: inline;
+  float: right;
+  color: tomato;
+}
+
+.navbar {
+  background-color: white;
 }
