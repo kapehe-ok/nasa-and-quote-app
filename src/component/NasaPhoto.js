@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import NavBar from "./NavBar";
 
 const apiKey = process.env.REACT_APP_NASA_KEY;
 
@@ -20,14 +21,18 @@ export default function NasaPhoto() {
   if (!photoData) return <div />;
 
   return (
-    <div className="nasa-photo">
-      <img className="photo" src={photoData.url} alt={photoData.title} />
+    <>
+      <NavBar />
 
-      <div>
-        <h1>{photoData.title}</h1>
-        <p className="date">{photoData.date}</p>
-        <p className="explanation">{photoData.explanation}</p>
+      <div className="nasa-photo">
+        <img className="photo" src={photoData.url} alt={photoData.title} />
+
+        <div>
+          <h1>{photoData.title}</h1>
+          <p className="date">{photoData.date}</p>
+          <p className="explanation">{photoData.explanation}</p>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
